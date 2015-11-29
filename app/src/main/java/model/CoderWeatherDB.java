@@ -63,7 +63,7 @@ public class CoderWeatherDB {
 
                 province.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 province.setProvinceName(cursor.getString(cursor.getColumnIndex("province_name")));
-                province.setProvinceName(cursor.getString(cursor.getColumnIndex("province_code")));
+                province.setProvinceCode(cursor.getString(cursor.getColumnIndex("province_code")));
                 list.add(province);
             } while (cursor.moveToNext());
         }
@@ -98,7 +98,7 @@ public class CoderWeatherDB {
 
                 city.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 city.setCityName(cursor.getString(cursor.getColumnIndex("city_name")));
-                city.setCityName(cursor.getString(cursor.getColumnIndex("city_code")));
+                city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
                 city.setProvinceId(provinceId);
                 list.add(city);
             } while (cursor.moveToNext());
@@ -115,7 +115,7 @@ public class CoderWeatherDB {
         if (county != null) {
             ContentValues values = new ContentValues();
 
-            values.put("c", county.getCountyName());
+            values.put("county_name", county.getCountyName());
             values.put("county_code", county.getCountyCode());
             values.put("city_id", county.getCityId());
             db.insert(COUNTY_TABLE, null, values);
