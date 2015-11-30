@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.luoxn28.coderweather.R;
 
+import service.AutoUpdateService;
 import util.HttpCallbackListener;
 import util.HttpUtil;
 import util.Utility;
@@ -164,5 +165,9 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
 
         cityNameText.setVisibility(View.VISIBLE);
         weatherInfoLayout.setVisibility(View.VISIBLE);
+
+        // 激活AutoUpdateService服务，实现后台定时更新
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
