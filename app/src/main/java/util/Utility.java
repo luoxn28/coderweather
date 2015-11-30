@@ -105,6 +105,7 @@ public class Utility {
             String weatherDesp = weatherInfo.getString("weather");
             String publishTime = weatherInfo.getString("ptime");
             saveWeatherInfo(context, cityName, weatherCode, temp1, temp2, weatherDesp, publishTime);
+            //Log.d("Utility", response.toString()); // check the http response
         }
         catch (Exception ex) {
             ex.printStackTrace();
