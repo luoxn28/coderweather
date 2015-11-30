@@ -32,7 +32,6 @@ public class HttpUtil {
                     while ((line = reader.readLine()) != null) {
                         response.append(line);
                     }
-                    Log.d("hdu HttpUtil", response.toString());
                     if (listener != null) {
                         // 回调onFinish()方法
                         listener.onFinish(response.toString());

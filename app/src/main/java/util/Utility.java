@@ -79,7 +79,6 @@ public class Utility {
                     county.setCountyName(array[1]);
                     county.setCityId(cityId);
                     // 将解析出来的数据存储到County表
-                    Log.d("hdu Utility", array[0] + array[1]);
                     coderWeatherDB.saveCounty(county);
                 }
                 return true;
